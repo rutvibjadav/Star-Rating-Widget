@@ -1,0 +1,225 @@
+:root {
+  color-scheme: light;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #202b3c;
+  background: #f3f6fb;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+  font-weight: 400;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(ellipse at 17% 15%, rgba(201, 219, 255, 0.48), transparent 34%),
+    radial-gradient(ellipse at 87% 85%, rgba(255, 233, 190, 0.38), transparent 30%),
+    #f3f6fb;
+}
+
+button {
+  font: inherit;
+}
+
+.page {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px 32px;
+}
+
+.rating-card {
+  width: min(100%, 480px);
+  padding: 46px 42px 38px;
+  border: 1px solid rgba(226, 232, 241, 0.85);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow:
+    0 24px 70px rgba(37, 54, 82, 0.10),
+    0 4px 14px rgba(37, 54, 82, 0.04);
+  text-align: center;
+}
+
+.card-icon {
+  display: grid;
+  width: 58px;
+  height: 58px;
+  margin: 0 auto 21px;
+  place-items: center;
+  border: 1px solid #f5e8c9;
+  border-radius: 18px;
+  background: #fff9eb;
+}
+
+.card-icon svg {
+  width: 27px;
+  fill: #e7ae37;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: #7c8798;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+h1 {
+  margin: 0;
+  color: #202b3c;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: clamp(1.7rem, 5vw, 2rem);
+  font-weight: 800;
+  letter-spacing: -0.055em;
+  line-height: 1.25;
+}
+
+.subtitle {
+  margin: 12px 0 27px;
+  color: #7b8493;
+  font-size: 0.94rem;
+  line-height: 1.6;
+}
+
+.stars {
+  display: flex;
+  justify-content: center;
+  gap: clamp(4px, 2vw, 13px);
+}
+
+.star {
+  display: grid;
+  width: clamp(44px, 11vw, 58px);
+  height: clamp(48px, 12vw, 62px);
+  padding: 0;
+  place-items: center;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  color: #dce1e9;
+  cursor: pointer;
+  font-size: clamp(2.5rem, 10vw, 3.45rem);
+  line-height: 1;
+  transition:
+    color 160ms ease,
+    transform 180ms ease,
+    filter 180ms ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.star.is-active {
+  color: #f2b83f;
+  filter: drop-shadow(0 3px 4px rgba(229, 167, 47, 0.16));
+}
+
+.star:hover {
+  transform: translateY(-4px) scale(1.08);
+}
+
+.star:active {
+  transform: translateY(-1px) scale(0.96);
+}
+
+.star:focus-visible,
+.reset-button:focus-visible {
+  outline: 3px solid #7ba7f7;
+  outline-offset: 4px;
+}
+
+.rating-message {
+  min-height: 25px;
+  margin: 21px 0 25px;
+  color: #566276;
+  font-size: 0.93rem;
+  font-weight: 600;
+}
+
+.card-divider {
+  height: 1px;
+  margin-bottom: 22px;
+  background: #edf0f5;
+}
+
+.reset-button {
+  display: inline-flex;
+  min-height: 43px;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 0 16px;
+  border: 1px solid #e4e8ef;
+  border-radius: 11px;
+  background: #fff;
+  color: #606b7c;
+  cursor: pointer;
+  font-size: 0.84rem;
+  font-weight: 600;
+  transition:
+    border-color 160ms ease,
+    background-color 160ms ease,
+    color 160ms ease,
+    transform 160ms ease;
+}
+
+.reset-button:hover {
+  transform: translateY(-1px);
+  border-color: #cbd5e3;
+  background: #f8faff;
+  color: #34425a;
+}
+
+.reset-button:active {
+  transform: translateY(0);
+}
+
+.reset-button svg {
+  width: 17px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.6;
+}
+
+.page-note {
+  margin: 22px 0 0;
+  color: #8993a2;
+  font-size: 0.78rem;
+}
+
+@media (max-width: 480px) {
+  .page {
+    padding: 28px 16px 24px;
+  }
+
+  .rating-card {
+    padding: 36px 22px 30px;
+    border-radius: 20px;
+  }
+
+  .subtitle {
+    max-width: 280px;
+    margin: 11px auto 23px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

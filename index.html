@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Share your experience with this simple, interactive five-star rating widget."
+    />
+    <title>Rate Your Experience</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="page">
+      <section class="rating-card" aria-labelledby="rating-title">
+        <div class="card-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" focusable="false">
+            <path
+              d="m24 5 5.8 11.75 13 .0-9.4 9.16 2.22 12.93L24 32.74l-11.62 6.1 2.22-12.93-9.4-9.16 13-.0L24 5Z"
+            />
+          </svg>
+        </div>
+        <p class="eyebrow">YOUR FEEDBACK MATTERS</p>
+        <h1 id="rating-title">Rate Your Experience</h1>
+        <p class="subtitle">How was your experience? Share your feedback!</p>
+
+        <div
+          class="stars"
+          role="group"
+          aria-label="Rate your experience from 1 to 5 stars"
+        >
+          <button class="star" type="button" data-rating="1" aria-label="1 out of 5 stars" aria-pressed="false">★</button>
+          <button class="star" type="button" data-rating="2" aria-label="2 out of 5 stars" aria-pressed="false">★</button>
+          <button class="star" type="button" data-rating="3" aria-label="3 out of 5 stars" aria-pressed="false">★</button>
+          <button class="star" type="button" data-rating="4" aria-label="4 out of 5 stars" aria-pressed="false">★</button>
+          <button class="star" type="button" data-rating="5" aria-label="5 out of 5 stars" aria-pressed="false">★</button>
+        </div>
+
+        <p class="rating-message" id="rating-message" aria-live="polite">
+          You haven't rated yet.
+        </p>
+
+        <div class="card-divider" aria-hidden="true"></div>
+        <button class="reset-button" id="reset-rating" type="button">
+          <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+            <path d="M4.2 7.1A6.2 6.2 0 1 1 3.8 11M4.2 3.7v3.8H8" />
+          </svg>
+          Reset Rating
+        </button>
+      </section>
+      <p class="page-note">A little feedback goes a long way.</p>
+    </main>
+  </body>
+</html>
